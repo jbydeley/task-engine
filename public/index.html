@@ -1,0 +1,20 @@
+<html>
+  <head>
+    <title>Title</title>
+  </head>
+  <body>
+    Body
+    <ul id="tasks">
+
+    </ul>
+    <script src="js/jquery.min.js"></script>
+    <script>
+    $.get('/api/tasks', function(response) {
+      $.each(response, function(i, r) {
+        console.log(r)
+        $('#tasks').append('<li>' + r.Text + '</li>');
+      });
+    })
+    </script>
+  </body>
+</html>
